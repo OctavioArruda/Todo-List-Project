@@ -15,15 +15,16 @@ $(document).ready(function(){
     $("input[type='text']").keypress(function(event){
         // console.log("Keypress");
         if(event.which === 13){
-            // checking for the enter key (13)
-            // console.log("You hit enter");
 
             var todoText = $(this).val();
             $(this).val("");
-            $("ul").append("<li><span>X</span> " + todoText + "</li>");
+            $("ul").append("<li><span><i class='fas fa-trash-alt'></i></span> " + todoText + "</li>");
         }
     });
 
+    $(".fa-plus").click(function(){
+        $("input[type='text']").fadeToggle();
+    })
 
 })
 
